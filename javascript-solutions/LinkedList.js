@@ -13,9 +13,11 @@ class LinkedList {
         this.head = new Node(val, this.head)
     }
     insertMany (arr) {
-        this.head = new Node(arr[0])
+        let idx = this.head ? 0 : 1
+        if (!this.head) {
+            this.head = new Node(arr[0])
+        }
         let current = this.head
-        let idx = 1
         while (idx < arr.length) {
             current.next = new Node(arr[idx])
             current = current.next
