@@ -44,8 +44,9 @@ class TreeNode {
             //preorder
             values.push(current.val)
             if (current.left) traverse(current.left)
-            //postorder
+            //inorder values.push(current.val)
             if (current.right) traverse(current.right)
+            //postorder values.push(current.val)
         }
         traverse(current)
         return values
