@@ -37,13 +37,38 @@ class TreeNode {
         }
         return values
     }
-    preOrderDFS (node) {
+    DFS (node) {
         const values = []
         let current = node
         function traverse (current) {
+            //preorder
             values.push(current.val)
             if (current.left) traverse(current.left)
+            //postorder
             if (current.right) traverse(current.right)
+        }
+        traverse(current)
+        return values
+    }
+
+    inOrderDFS (node) {
+        const values = []
+        let current = node
+        function traverse (current) {
+            if (current.left) traverse(current.left)
+            values.push(current.val)
+            if (current.right) traverse(current.right)
+        }
+        traverse(current)
+        return values
+    }
+    postOrderDFS (node) {
+        const values = []
+        let current = node
+        function traverse (current) {
+            if (current.left) traverse(current.left)
+            if (current.right) traverse(current.right)
+            values.push(current.val)
         }
         traverse(current)
         return values
