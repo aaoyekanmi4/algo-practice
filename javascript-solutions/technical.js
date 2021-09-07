@@ -26,7 +26,7 @@ const main = () => {
 
     function getBestBlocks () {
         let reqDistances = []
-        for (let req of Reqs) { //m
+        for (let req of Reqs) {
             let currentBlock = 0
             while (currentBlock < Blocks.length) {
                 let minDistance = Infinity
