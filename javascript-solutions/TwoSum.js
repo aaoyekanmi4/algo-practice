@@ -14,14 +14,14 @@ const main = () => {
     console.log(twoSum([2, 7, 11, 15], 9))
 
     const twoSumTwoPointer = (nums, target) => {
-        const sortedNums = nums.slice().sort()
+        const sortedNums = nums.slice().sort((a, b) => a - b)
         let low = 0
         let high = sortedNums.length - 1
-        while (true) {
-            if (nums[low] + nums[high] > target) {
+        while (low < high) {
+            if ((nums[low] + nums[high]) > target) {
                 high--
             }
-            else if (nums[low] + nums[high] < target) {
+            else if ((nums[low] + nums[high]) < target) {
                 low++
             }
             else {
@@ -29,6 +29,6 @@ const main = () => {
             }
         }
     }
-    console.log(twoSumTwoPointer([2, 7, 11, 15], 9))
+    console.log(twoSumTwoPointer([3, 5, -4, 8, 11, 1, -1, 6], 10))
 }
 main()
