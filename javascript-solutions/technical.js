@@ -46,7 +46,6 @@ const main = () => {
                 currentBlock++
             }
         }
-        console.log(reqDistances)
         let maxDistancesForBlock = reqDistances.map((distances) => Math.max(...distances))
         let bestBlockValue = Math.min(...maxDistancesForBlock)
         let bestBlocks = []
