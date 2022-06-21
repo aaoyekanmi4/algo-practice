@@ -13,6 +13,7 @@ const main = () => {
         const stack = []
         for (let i = 0; i < s.length; i++) {
             let character = s[i]
+            //if character an opening bracket
             if (map[character]) {
                 stack.push(character)
             }
