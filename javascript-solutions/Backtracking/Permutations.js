@@ -15,7 +15,6 @@ const main = () => {
             perms.forEach((perm) => result.push(perm))
             nums.push(n)
         }
-
         return result
     }
     console.log(permute([1, 2, 3]))
