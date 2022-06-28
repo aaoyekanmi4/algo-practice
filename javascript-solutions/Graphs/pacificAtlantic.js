@@ -53,7 +53,7 @@ const main = () => {
         const result = []
         for (let i = 0; i < heights.length; i++) {
             for (let j = 0; j < heights[0].length; j++) {
-                if (pacificReachable[i][j] === atlanticReachable[i][j]) {
+                if (pacificReachable[i][j] && atlanticReachable[i][j]) {
                     result.push([i, j])
                 }
             }
