@@ -14,6 +14,6 @@ const main = () => {
         }
         return table[targetSum]
     }
-    console.log(bestSumTab(100, [4, 10, 25]))
+    console.log(bestSumTab(100, [4, 10, 100]))
 }
 main()
