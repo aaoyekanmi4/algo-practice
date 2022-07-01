@@ -14,6 +14,7 @@ var canFinish = function (numCourses, prerequisites) {
     }
     const graph = buildGraph(numCourses, prerequisites)
 
+    
     const dfs = (node, visited, graph) => {
         if (visited.has(node)) return false
         if (!graph[node].length) return true

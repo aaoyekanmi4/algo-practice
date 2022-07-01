@@ -1,3 +1,5 @@
+
+
 class Graph {
     constructor () {
         this.adjacencyList = {}
@@ -31,16 +33,19 @@ class Graph {
         delete this.adjacencyList(vertex)
     }
 
+
+
     dfsRecursive (vertex) {
         const result = []
         const visited = {}
 
-        const dfsHelper = (vertex) => {
-            result.push(vertex)
+    const dfsHelper = (vertex, indent_level = ' ') => {
+        let current_indent_level = indent_level + indent_level
+            console.log(current_indent_level  + vertex)
             visited[vertex] = true
             this.adjacencyList[vertex].forEach((neighbor) => {
                 if (!visited[neighbor]) {
-                    return dfsHelper(neighbor)
+                    return dfsHelper(neighbor, current_indent_level)
                 }
             })
         }
@@ -95,12 +100,8 @@ graph.addVertex("E")
 graph.addVertex("F")
 graph.addEdge("A", "B")
 graph.addEdge("A", "C")
-graph.addEdge("B", "D")
-graph.addEdge("C", "E")
-graph.addEdge("D", "E")
-graph.addEdge("D", "F")
-graph.addEdge("E", "F")
+graph.addEdge("B", "E")
+
 
 console.log(graph)
-console.log(graph.bfs("A"
-))
+console.log(graph.dfsRecursive("A"))
