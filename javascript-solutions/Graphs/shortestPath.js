@@ -17,7 +17,7 @@ const main = () => {
         }
         const graph = buildGraph(edges)
         //breadth-first search of graph
-        const bfs = (current, target, graph, visited) => {
+        const bfs = (startNode, target, graph, visited) => {
             let count = 0
             const queue = [[startNode, count]]
             while (queue.length) {
@@ -26,7 +26,7 @@ const main = () => {
                 count++
 
                 if (current[0] === target) {
-                    return [target, current[1]]
+                    return  current[1]
                 }
                 for (let neighbor of graph[current[0]]) {
                     if (!visited.has(neighbor)) {

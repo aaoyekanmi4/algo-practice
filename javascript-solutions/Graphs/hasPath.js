@@ -13,10 +13,9 @@ const main = () => {
     }
 
     const graph = buildGraph(edges)
-    console.log(graph)
+
     //For directed acyclic we don't need the visited set
     const hasPath = (src, dst, graph, visited = new Set()) => {
-        console.log(src)
         if (visited.has(src)) return false
         visited.add(src)
         if (src === dst) return true

@@ -23,6 +23,6 @@ function cycleInGraph (edges) {
         const hasCycle = dfsHelper(i)
         if (hasCycle) return true
     }
-    
+
     return false
 }
