@@ -4,13 +4,13 @@ var coinChange = function (coins, amount) {
     function coinHelper (coins, amount, memo) {
         if (amount in memo) return memo[amount]
         if (amount === 0) return 0
-        if (amount < 0) return -1
+        if (amount < 0) return Infinity
         let fewest = Infinity
         for (let coin of coins) {
             const diff = amount - coin
-            const result = coinHelper(coins, diff, memo)
-            if (result >= 0 && result < fewest) {
-                fewest = 1 + result
+            const result = coinHelper(coins, diff, memo) + 1
+            if (result < fewest) {
+                fewest = result
             }
         }
         memo[amount] = fewest === Infinity ? -1 : fewest
