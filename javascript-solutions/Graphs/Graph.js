@@ -39,13 +39,16 @@ class Graph {
         const result = []
         const visited = {}
 
-    const dfsHelper = (vertex, indent_level = ' ') => {
-        let current_indent_level = indent_level + indent_level
-            console.log(current_indent_level  + vertex)
+        const dfsHelper = (vertex, indent_level = 0) => {
+            let indent = ''
+            for (let i = 0; i < indent_level; i++) {
+                indent += '  '
+            }
+            console.log(indent + vertex)
             visited[vertex] = true
             this.adjacencyList[vertex].forEach((neighbor) => {
                 if (!visited[neighbor]) {
-                    return dfsHelper(neighbor, current_indent_level)
+                    return dfsHelper(neighbor, indent_level + 1)
                 }
             })
         }
@@ -57,7 +60,7 @@ class Graph {
         const result = []
         const visited = {}
         const stack = [vertex]
-        let currentVertex;
+        let currentVertex
         while (stack.length) {
             currentVertex = stack.pop()
             if (!visited[currentVertex]) {
@@ -75,7 +78,7 @@ class Graph {
         const queue = [vertex]
         const result = []
         const visited = {}
-        let currentVertex;
+        let currentVertex
         visited[vertex] = true
         while (queue.length) {
             currentVertex = queue.shift()
@@ -101,6 +104,8 @@ graph.addVertex("F")
 graph.addEdge("A", "B")
 graph.addEdge("A", "C")
 graph.addEdge("B", "E")
+graph.addEdge('D', 'F')
+graph.addEdge('A', 'F')
 
 
 console.log(graph)
